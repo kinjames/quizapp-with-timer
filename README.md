@@ -1,8 +1,8 @@
-# Frontend Mentor - Manage landing page
+# Quiz App With A Timer
 
 ![Design preview for the Calculator coding challenge](./images/preview.jpg)
 
-This is a solution to the [Calculator](https://www.frontendmentor.io/challenges/manage-landing-page-SLXqC6P5/hub/manage-landing-page-R-0Lx_RXzf). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution for a Quizapp that has a timer.
 
 ## Table of contents
 
@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/manage-landing-page-ByF2inAJqe)
-- Live Site URL: [Github](https://kinjames.github.io/manage-landing-page/)
+- Solution URL: [Frontend Mentor](https://github.com/kinjames/quizapp-with-timer)
+- Live Site URL: [Github](https://kinjames.github.io/quizapp-with-timer/)
 
 ## My process
 
@@ -41,7 +41,6 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Scss
-- CSS Grid
 - Flexbox
 - JavaScript
 
