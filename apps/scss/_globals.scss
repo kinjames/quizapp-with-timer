@@ -1,0 +1,107 @@
+
+
+*,*::before,*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: $main-color;
+
+    // @include breakpoint-down(small){
+    //     margin: 0 1.25rem;
+    // }
+}
+
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-jc-c {
+        justify-content: center;
+    }
+
+    &-jc-fe{
+        justify-content: flex-end;
+    }
+
+    &-ai-c {
+        align-items: center;
+    }
+
+    &-col {
+        flex-direction: column;
+    }
+    &-col-mob {
+        @include breakpoint-down(small){
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+    }
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    outline: none;
+    font-weight: 500;
+}
+
+.positions {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    @include breakpoint-down(small){
+        transform: translate(-50%,-50%) scale(.94);
+    }
+
+}
+
+.cta {
+    margin: 0 0.3125rem;
+    height: 2.5rem;
+    width: 6.25rem;
+    border-radius: 0.3125rem;
+    border: 1px solid transparent;
+    color: $white;
+    font-size: 1rem;
+    border: 1px solid $main-color;
+    transition: all 0.3s ease;
+}
+
+.b-rad {
+    border-radius: 0.3125rem;
+}
+
+.user-select {
+    user-select: none;
+}
+
+.quit{
+    color: $main-color;
+    background: $white;
+    font-weight: 500;
+
+    &:hover {
+        color: $white;
+        background: $main-color;
+    }
+}
+
+.restart{
+    color: $white;
+    background: $main-color;
+
+    &:hover{
+        background-color: #9e0351;
+    }
+}

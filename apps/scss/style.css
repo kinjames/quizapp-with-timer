@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  background-color: #B9005B;
+}
+
+.flex {
+  display: flex;
+}
+.flex-jc-sb {
+  justify-content: space-between;
+}
+.flex-jc-c {
+  justify-content: center;
+}
+.flex-jc-fe {
+  justify-content: flex-end;
+}
+.flex-ai-c {
+  align-items: center;
+}
+.flex-col {
+  flex-direction: column;
+}
+@media (max-width: 39.9375em) {
+  .flex-col-mob {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  outline: none;
+  font-weight: 500;
+}
+
+.positions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media (max-width: 39.9375em) {
+  .positions {
+    transform: translate(-50%, -50%) scale(0.94);
+  }
+}
+
+.cta {
+  margin: 0 0.3125rem;
+  height: 2.5rem;
+  width: 6.25rem;
+  border-radius: 0.3125rem;
+  border: 1px solid transparent;
+  color: #fff;
+  font-size: 1rem;
+  border: 1px solid #B9005B;
+  transition: all 0.3s ease;
+}
+
+.b-rad {
+  border-radius: 0.3125rem;
+}
+
+.user-select {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.quit {
+  color: #B9005B;
+  background: #fff;
+  font-weight: 500;
+}
+.quit:hover {
+  color: #fff;
+  background: #B9005B;
+}
+
+.restart {
+  color: #fff;
+  background: #B9005B;
+}
+.restart:hover {
+  background-color: #9e0351;
+}
+
+.start-btn button {
+  font-size: 1.5625rem;
+  font-weight: 500;
+  color: #B9005B;
+  padding: 0.9375rem 1.875rem;
+  outline: none;
+  border: none;
+  background: #fff;
+}
+
+.info-box {
+  width: 33.75rem;
+  background: #fff;
+  display: none;
+}
+.info-box .info-title {
+  height: 3.75rem;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+  padding: 0 2.1875rem;
+}
+.info-box .rule-list {
+  padding: 0.9375rem 2.1875rem;
+}
+.info-box .rule-list .rule {
+  margin: 0.3125rem;
+  font-size: 1.0625rem;
+}
+.info-box .rule-list .rule span {
+  color: #B9005B;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+@media (max-width: 39.9375em) {
+  .info-box .rule-list .rule span {
+    font-size: 0.975rem;
+  }
+}
+@media (max-width: 39.9375em) {
+  .info-box .rule-list .rule {
+    font-size: 0.875rem;
+  }
+}
+.info-box .btns {
+  height: 3.75rem;
+  padding: 0 2.1875rem;
+  border-top: 1px solid lightgray;
+}
+@media (max-width: 39.9375em) {
+  .info-box {
+    width: 100%;
+  }
+}
+
+.quiz-section {
+  width: 34.375rem;
+  background: #fff;
+}
+.quiz-section header {
+  position: relative;
+  z-index: 100;
+  height: 4.375rem;
+  padding: 0 1.875rem;
+  background: #fff;
+  border-radius: 0.3125rem 0.3125rem 0 0;
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+}
+.quiz-section header .title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+@media (max-width: 39.9375em) {
+  .quiz-section header .title {
+    font-size: 1rem;
+  }
+}
+.quiz-section header .timer {
+  width: 9.0625rem;
+  height: 2.8125rem;
+  background: #f1a5ca;
+  border: 1px solid #f495c3;
+  padding: 0 0.5rem;
+}
+.quiz-section header .timer .timer-text {
+  font-weight: 400;
+  font-size: 1.0625rem;
+}
+.quiz-section header .timer .timer-sec {
+  font-size: 1.125rem;
+  font-weight: 500;
+  background: #343a40;
+  border: 1px solid #343a40;
+  height: 1.875rem;
+  width: 2.8125rem;
+  color: #fff;
+  text-align: center;
+  line-height: 1.875rem;
+}
+@media (max-width: 39.9375em) {
+  .quiz-section header {
+    padding: 1.25rem;
+  }
+}
+.quiz-section section {
+  padding: 1.5625rem 1.875rem 1.25rem 1.875rem;
+  background: #fff;
+}
+.quiz-section section .question {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.quiz-section section .option-list {
+  padding: 1.25rem 0;
+  display: block;
+}
+.quiz-section section .option-list .option {
+  background: rgb(255, 244, 244);
+  border: 1px solid rgb(242, 155, 168);
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.0625rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.quiz-section section .option-list .option .icon {
+  width: 1.625rem;
+  height: 1.625rem;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1.5rem;
+  font-size: 0.8125rem;
+  pointer-events: none;
+}
+.quiz-section section .option-list .option .tick {
+  color: #23903c;
+  border-color: #23903c;
+  background: #d4edda;
+}
+.quiz-section section .option-list .option .cross {
+  color: #a42834;
+  border-color: #a42834;
+  background: #f8d7da;
+}
+.quiz-section section .option-list .option:last-child {
+  margin-bottom: 0;
+}
+.quiz-section section .option-list .option:hover {
+  color: deeppink;
+  background: pink;
+}
+.quiz-section footer {
+  height: 3.75rem;
+  width: 100%;
+  padding: 0 1.875rem;
+}
+.quiz-section footer .total span p {
+  font-weight: 500;
+  padding: 0 0.3125rem;
+}
+.quiz-section footer .total span p:first-child {
+  padding-left: 0px;
+}
+.quiz-section footer .next-btn {
+  height: 2.5rem;
+  padding: 0 0.8125rem;
+  font-size: 1.125rem;
+  font-weight: 400;
+  border: none;
+  outline: none;
+  border: 1px solid #B9005B;
+  background: #B9005B;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.quiz-section footer .next-btn:hover {
+  background: #9e0351;
+}
+@media (max-width: 39.9375em) {
+  .quiz-section {
+    width: 100%;
+  }
+}
+
+.result-box {
+  background-color: #fff;
+  width: 28.125rem;
+  padding: 1.5625rem 1.875rem;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+}
+.result-box .icon {
+  font-size: 6.25rem;
+  color: #B9005B;
+  margin-bottom: 0.625rem;
+}
+.result-box .complete {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.result-box .score span {
+  margin: 0.625rem 0;
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+.result-box .score span p {
+  font-weight: 600;
+  padding: 0 0.25rem;
+}
+.result-box .btns {
+  margin: 1.25rem 0;
+}
+.result-box .btns button {
+  margin: 0 0.625rem;
+  height: 2.5rem;
+  padding: 0 1.25rem;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  border: 1px solid #B9005B;
+  transition: all 0.3s ease;
+}
+@media (max-width: 39.9375em) {
+  .result-box {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
