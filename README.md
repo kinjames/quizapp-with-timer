@@ -1,6 +1,6 @@
 # Quiz App With A Timer
 
-![Design preview for the Calculator coding challenge](./images/desktop.jpg)
+![Design preview for the Calculator coding challenge](./images/desktop.png)
 
 This is a solution for a Quizapp that has a timer.
 
@@ -27,7 +27,7 @@ Users should be able to:
 ### Screenshots
 
 ![Desktop Design](./images/desktop.png)
-![Mobile Design](./design/mobile.jpg)
+![Mobile Design](./images/mobile.jpg)
 
 ### Links
 
