@@ -228,11 +228,11 @@ function startTimerLine(time){
 }
 
 function startTimerLineMobile(time){
-    counterLineMobile = setInterval(timer, 29);
+    counterLineMobile = setInterval(timer, 32.5);
     function timer(){
         time += 1;
         timeLineMobile.style.width = time + "px"
-        if (time > 400){
+        if (time > 375){
             clearInterval(counterLineMobile)
         }
     }
