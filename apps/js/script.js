@@ -65,6 +65,7 @@ restartQuiz.onclick = () =>{
     clearInterval(counterLineMobile);
     startTimerLineMobile(widthValueMobile);
     nextBtn.style.display = "none";
+    timeOff.textContent= "Time Left"
 }
 
 quitQuiz.onclick = () =>{
@@ -85,6 +86,9 @@ nextBtn.addEventListener('click', function(){
         startTimerLineMobile(widthValueMobile);
         nextBtn.style.display = "none";
     } else {
+        clearInterval(timerCount);
+        clearInterval(counterLine);
+        clearInterval(counterLineMobile);
         console.log("Completed")
         showResultBox();
     }
@@ -224,11 +228,11 @@ function startTimerLine(time){
 }
 
 function startTimerLineMobile(time){
-    counterLineMobile = setInterval(timer, 32.5);
+    counterLineMobile = setInterval(timer, 29);
     function timer(){
         time += 1;
         timeLineMobile.style.width = time + "px"
-        if (time > 385){
+        if (time > 400){
             clearInterval(counterLineMobile)
         }
     }
