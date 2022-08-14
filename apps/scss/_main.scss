@@ -13,13 +13,14 @@
 .info-box {
     width: 33.75rem;
     background: $white;
-    display: none;
+    pointer-events: none;
+    opacity: 0;
 
     .info-title{
         height: 3.75rem;
         width: 100%;
         border-bottom: 1px solid lightgray;
-        padding: 0 2.1875rem;
+        padding: 0 1.875rem;
     }
 
     .rule-list {
@@ -61,7 +62,8 @@
 .quiz-section{
     width: 34.375rem;
     background: $white;
-    // display: none;
+    pointer-events: none;
+    opacity: 0;
 
     header {
         position: relative;
@@ -124,48 +126,7 @@
             padding: 1.25rem 0;
             display: block;
 
-            .option {
-                background: rgb(255, 244, 244);
-                border: 1px solid rgb(242, 155, 168);
-                padding: .5rem 1rem;
-                margin-bottom: 1rem;
-                font-size: 1.0625rem;
-                cursor: pointer;
-                transition: all .3s ease;
 
-                .icon {
-                    width: 1.625rem;
-                    height: 1.625rem;
-                    border: 2px solid transparent;
-                    border-radius: 50%;
-                    text-align: center;
-                    line-height: 1.5rem;
-                    font-size: 0.8125rem;
-                    pointer-events: none;
-
-                }
-
-                .tick {
-                    color: #23903c;
-                    border-color: #23903c;
-                    background: #d4edda;
-                }
-
-                .cross {
-                    color: #a42834;
-                    border-color: #a42834;
-                    background: #f8d7da;
-                }
-
-                &:last-child{
-                    margin-bottom: 0;
-                }
-
-                &:hover {
-                    color: deeppink;
-                    background: pink;
-                }
-            }
         }
     }
 
@@ -188,22 +149,7 @@
             }
         }
 
-        .next-btn {
-            height: 2.5rem;
-            padding: 0 0.8125rem;
-            font-size: 1.125rem;
-            font-weight: 400;
-            border: none;
-            outline: none;
-            border: 1px solid $main-color;
-            background: $main-color;
-            color: $white;
-            transition: all .3s ease;
 
-            &:hover {
-                background: #9e0351;
-            }
-        }
 
 
     }

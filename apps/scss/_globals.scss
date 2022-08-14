@@ -59,11 +59,32 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    transition: all .3s ease;
+    box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2),
+                0px 6px 20px 0 rgba(0,0,0,0.19);
 
     @include breakpoint-down(small){
         transform: translate(-50%,-50%) scale(.94);
     }
 
+}
+
+.next-btn {
+    display: none;
+    height: 2.5rem;
+    padding: 0 0.8125rem;
+    font-size: 1.125rem;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    border: 1px solid $main-color;
+    background: $main-color;
+    color: $white;
+    transition: all .3s ease;
+
+    &:hover {
+        background: #9e0351;
+    }
 }
 
 .cta {
@@ -103,5 +124,103 @@ button {
 
     &:hover{
         background-color: #9e0351;
+    }
+}
+
+
+.info-box.activeInfo,
+.quiz-section.activeQuiz,
+.result-box.activeResult {
+    z-index: 5;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.option-list .option.correct{
+    color: #155724;
+    border-color: #23903c;
+    background: #d4edda;
+}
+
+.option-list .option.incorrect{
+    color: #a42834;
+    border-color: #a42834;
+    background: #f8d7da;
+}
+
+.option-list .option.disabled {
+    pointer-events: none;
+}
+
+
+.option {
+    background: rgb(247, 240, 240);
+    border: 1px solid rgb(236, 171, 181);
+    padding: .5rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.0625rem;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    .icon {
+        width: 1.625rem;
+        height: 1.625rem;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 1.5rem;
+        font-size: 0.8125rem;
+        pointer-events: none;
+
+    }
+
+    .tick {
+        color: #23903c;
+        border-color: #23903c;
+        background: #d4edda;
+    }
+
+    .cross {
+        color: #a42834;
+        border-color: #a42834;
+        background: #f8d7da;
+    }
+
+    &:last-child{
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        color: deeppink;
+        background: pink;
+    }
+}
+
+.time-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: $main-color;
+
+}
+
+.time-line-mobile {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: $main-color;
+}
+
+.hide-for-desktop {
+    @include breakpoint-up (medium){
+        display: none;
+    }
+}
+
+.hide-for-mobile {
+    @include breakpoint-down (small){
+        display: none;
     }
 }
