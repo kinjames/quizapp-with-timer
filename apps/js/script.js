@@ -4,6 +4,7 @@ const exitBtn = infoBox.querySelector(".btns .quit");
 const continueBtn = infoBox.querySelector(".btns .restart");
 const quizBox = document.querySelector(".quiz-section");
 const timeCounter = quizBox.querySelector(".timer .timer-sec");
+const timeOff = quizBox.querySelector(".timer .timer-text");
 const timeLine = document.querySelector("header .time-line")
 const timeLineMobile = document.querySelector("header .time-line-mobile")
 
@@ -34,15 +35,41 @@ continueBtn.addEventListener('click', function(){
 let questionCount = 0;
 let bottomQuestionCounter = 1;
 let timerCount;
+let counterLine;
 let timeValue = 15;
 let widthValue = 0;
 let widthValueMobile = 0;
+let userScore = 0;
 
 
 const nextBtn = quizBox.querySelector('.next-btn');
 const resultBox = document.querySelector(".result-box");
 const restartQuiz = resultBox.querySelector(".btns .restart");
 const quitQuiz = resultBox.querySelector(".btns .quit");
+
+restartQuiz.onclick = () =>{
+    quizBox.classList.add("activeQuiz");
+    resultBox.classList.remove("activeResult");
+    let questionCount = 0;
+    let bottomQuestionCounter = 1;
+    let timeValue = 15;
+    let widthValue = 0;
+    let widthValueMobile = 0;
+    let userScore = 0;
+    showQuestions(questionCount);
+    questionCounter(bottomQuestionCounter);
+    clearInterval(timerCount);
+    startTimer(timeValue);
+    clearInterval(counterLine);
+    startTimerLine(widthValue);
+    clearInterval(counterLineMobile);
+    startTimerLineMobile(widthValueMobile);
+    nextBtn.style.display = "none";
+}
+
+quitQuiz.onclick = () =>{
+    window.location.reload();
+}
 
 nextBtn.addEventListener('click', function(){
     if (questionCount < questions.length - 1){
@@ -95,6 +122,8 @@ function optionSelected(answer){
     let allOptions = optionList.children.length;
 
     if (userAnswer == correctAnswer){
+        userScore += 1;
+        console.log(userScore);
         answer.classList.add("correct");
         console.log("Answer is Correct");
         answer.insertAdjacentHTML("beforeend", tickIcon);
@@ -130,6 +159,19 @@ function showResultBox(){
     infoBox.classList.remove("activeInfo");
     quizBox.classList.remove("activeQuiz");
     resultBox.classList.add("activeResult");
+
+    const scoreText = resultBox.querySelector(".score");
+
+    if (userScore > 10) {
+        let scoreTag = '<span class="flex">and Congrats You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        scoreText.innerHTML = scoreTag;
+    }
+    else{
+        let scoreTag = '<span class="flex">and sorry You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        scoreText.innerHTML = scoreTag;
+    }
+
+    // const totalText = resultBox.querySelector("");
 }
 
 
@@ -147,6 +189,24 @@ function startTimer(time){
         if (time < 0){
             clearInterval(timerCount)
             timeCounter.textContent = "00";
+            timeOff.textContent= "Time Out"
+
+            let correctAnswer = questions[questionCount].answer;
+            let allOptions = optionList.children.length;
+
+            for (let i = 0; i < allOptions; i++){
+                if(optionList.children[i].textContent == correctAnswer){
+                    optionList.children[i].setAttribute("class", "option correct flex flex-ai-c flex-jc-sb");
+                    optionList.children[i].insertAdjacentHTML("beforeend", tickIcon);
+                }
+            }
+
+            for (let i = 0; i < allOptions; i++) {
+                optionList.children[i].classList.add("disabled")
+                
+            }
+        
+            nextBtn.style.display = "block";
         }
     }
 }
