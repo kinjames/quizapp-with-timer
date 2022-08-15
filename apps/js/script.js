@@ -50,12 +50,13 @@ const quitQuiz = resultBox.querySelector(".btns .quit");
 restartQuiz.onclick = () =>{
     quizBox.classList.add("activeQuiz");
     resultBox.classList.remove("activeResult");
-    let questionCount = 0;
-    let bottomQuestionCounter = 1;
-    let timeValue = 15;
-    let widthValue = 0;
-    let widthValueMobile = 0;
-    let userScore = 0;
+    timeValue = 15;
+    questionCount = 0;
+    bottomQuestionCounter = 1;
+    userScore = 0;
+    widthValue = 0;
+    widthValueMobile = 0;
+
     showQuestions(questionCount);
     questionCounter(bottomQuestionCounter);
     clearInterval(timerCount);
@@ -65,7 +66,9 @@ restartQuiz.onclick = () =>{
     clearInterval(counterLineMobile);
     startTimerLineMobile(widthValueMobile);
     nextBtn.style.display = "none";
-    timeOff.textContent= "Time Left"
+    timeOff.textContent= "Time Left";
+
+   
 }
 
 quitQuiz.onclick = () =>{
@@ -85,6 +88,7 @@ nextBtn.addEventListener('click', function(){
         clearInterval(counterLineMobile);
         startTimerLineMobile(widthValueMobile);
         nextBtn.style.display = "none";
+        timeOff.textContent="Time Left"
     } else {
         clearInterval(timerCount);
         clearInterval(counterLine);
